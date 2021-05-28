@@ -1,0 +1,18 @@
+<h2 class="text-center">Modifica Fattura</h2>
+<div>
+    <form>
+        <label>Data</label> <br>
+        <input name="data" [(ngModel)]="fattura.idCliente"><br>
+        <label>Numero</label> <br> 
+        <input type="text" name="numero" [(ngModel)]="fattura.numero"><br>
+        <label>Anno</label> <br>
+        <input type="number" name="anno" [(ngModel)]="fattura.anno"><br>
+        <label>Importo</label> <br>
+        <input type="number" name="importo" [(ngModel)]="fattura.importo"><br>
+        <label>Stato</label> <br>
+        <input type="text" name="stato" [(ngModel)]="fattura.stato.nome"><br>
+        <div class="text-center mt-2"> <br>
+            <a class="btn btn-outline-success"(click)="clientiService.modificaSingolaFattura(fattura.id, fattura)">Salva</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,36 @@
+<div class="text-center">
+    <h1>Lista Clienti</h1>
+    <a routerLink="/nuovoCliente" class="btn btn-outline-info">Nuovo<i class="bi bi-plus-circle-dotted"></i></a>
+</div>
+<hr>
+<ng-container class="text-center">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Partita Iva</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="clienti.content">
+            <tr *ngFor='let c of clienti.content; let i = index'>
+
+                <td>{{getRealId(page, i+1)}}</td>
+                <td>{{c.ragioneSociale}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.partitaIva}}</td>
+                <a class="btn btn-outline-secondary m-2" routerLink="/fattureCliente/{{c.id}}">Fatture</a>
+                <a class="btn btn-outline-success m-2" routerLink="/modificaCliente/{{c.id}}">Modifica</a>
+                <a class="btn btn-outline-danger m-2">Cancella</a>
+            </tr>
+        </tbody>
+    </table>
+
+</ng-container>
+<ngb-pagination 
+[(page)]="page"
+[pageSize]="pageSize" 
+[collectionSize]="clienti.totalElements"
+(pageChange)="myPageChange(this)">
+</ngb-pagination>

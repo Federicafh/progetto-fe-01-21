@@ -1,0 +1,17 @@
+<h2 class="text-center">Modifica Cliente</h2>
+
+<div>
+    <form>
+        <label>Id</label> <br>
+        <input type="number" name="id" [(ngModel)]="cliente.idCliente"><br>
+        <label>Ragione Sociale</label> <br>
+        <input type="text" name="ragioneSociale" [(ngModel)]="cliente.ragioneSociale"><br>
+        <label>Email</label> <br>
+        <input type="text" name="email" [(ngModel)]="cliente.email"><br>
+        <label>Partita Iva</label> <br>
+        <input type="number" name="partitaIva" [(ngModel)]="cliente.partitaIva"><br>
+        <div class="text-center mt-2">
+            <a class="btn btn-outline-success" (click)="clientiService.putClienti(cliente.id, cliente)">Salva</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+<h2 class="text-center">Modifica Fatture</h2>
+
+<div>
+    <form>
+        <label>Data</label> <br>
+        <input type="data" name="id" [(ngModel)]="fattura.data"><br>
+        <label>Numero</label> <br> 
+        <input type="text" name="numero" [(ngModel)]="fattura.numero"><br>
+        <label>Anno</label> <br>
+        <input type="number" name="anno" [(ngModel)]="fattura.anno"><br>
+        <label>Importo</label> <br>
+        <input type="number" name="importo" [(ngModel)]="fattura.importo"><br>
+        <label>Stato</label> <br>
+        <select class="select" name="stato">
+          <option value="1" [(ngModel)]="fattura.stato.id">PAGATA</option>
+          <option value="2" [(ngModel)]="fattura.stato.id">NON PAGATA</option>
+        </select>
+        <div class="text-center mt-2"> <br>
+            <a class="btn btn-outline-success"(click)="fattureService.putFatture(fattura.id, fattura)">Salva</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,26 @@
+<h1>Elenco fatture</h1>
+<a class="btn btn-outline-info" routerLink="/{{idCliente}}/nuovaFattura">Nuovo</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Data</th>
+            <th>Numero</th>
+            <th>Anno</th>
+            <th>Importo</th>
+            <th>Stato</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let fc of fattureListeId">
+            <td>{{fc.id}}</td>
+            <td>{{fc.data}}</td>
+            <td>{{fc.numero}}</td>
+            <td>{{fc.anno}}</td>
+            <td>{{fc.importo  | currency:'EUR':'symbol':'1.2-2'}}</td>
+            <td>{{fc.stato.nome}}</td>
+            <a class="btn btn-outline-success m-2" routerLink="/modificaSingolaFattura/{{fc.id}}">Modifica</a>
+                <a class="btn btn-outline-danger m-2">Cancella</a>
+        </tr>
+    </tbody>
+</table>

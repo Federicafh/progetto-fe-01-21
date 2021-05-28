@@ -1,0 +1,35 @@
+<div class="text-center">
+    <h1>Lista Fatture</h1>
+</div>
+<ng-container class="text-center">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Data</th>
+                <th>Numero</th>
+                <th>Anno</th>
+                <th>Importo</th>
+                <th>Stato</th>
+                <th>Cliente</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="fatture.content">
+            <tr *ngFor='let f of fatture.content'>
+                <ng-container *ngIf=" f.id != 6 && f.id != 8 && f.id != 10 && f.id != 18">
+                    <td>{{f.id}}</td>
+                    <td>{{f.data}}</td>
+                    <td>{{f.numero}}</td>
+                    <td>{{f.anno}}</td>
+                    <td>{{f.importo | currency:'EUR':'symbol':'1.2-2'}}</td>
+                    <td>{{f.stato.nome != null ? f.stato.nome : '-'}}</td>
+                    <td>{{f.cliente.ragioneSociale}}</td>
+                    <a class="btn btn-outline-success m-2" routerLink="/modificaFattura/{{f.id}}">Modifica</a>
+                    <a class="btn btn-outline-danger m-2">Cancella</a>
+                </ng-container>
+            </tr>
+        </tbody>
+    </table>
+    <ngb-pagination [(page)]="page" [pageSize]="pageSize" [maxSize]="5" [collectionSize]="fatture.totalElements"
+        (pageChange)="myPageChange(this)">
+    </ngb-pagination>

@@ -1,0 +1,44 @@
+<h2>Nuovo Cliente</h2>
+<form class="row" *ngIf="nuovoCliente">
+    <div class="col-md-6">
+        <label>Ragione Sociale</label> <br>
+        <input type="text" name="ragioneSociale" [(ngModel)]="nuovoCliente.ragioneSociale"><br>
+        <label>Partita Iva</label> <br>
+        <input type="numebr" name="partitaIva" [(ngModel)]="nuovoCliente.partitaIva"><br>
+        <label>Email</label> <br>
+        <input type="text" name="email" [(ngModel)]="nuovoCliente.email"><br>
+        <label>Tipo Cliente</label> <br>
+        <input type="text" name="tipoCliente" [(ngModel)]="nuovoCliente.tipoCliente"><br>
+        <label>Pec</label> <br>
+        <input type="text" name="email" [(ngModel)]="nuovoCliente.pec"><br>
+        <label>Telefono</label> <br>
+        <input type="number" name="telefono" [(ngModel)]="nuovoCliente.telefono"><br>
+        <label>Nome Contatto</label> <br>
+        <input type="text" name="nomeContatto" [(ngModel)]="nuovoCliente.nomeContatto"><br>
+        <label>Cognome Contatto</label> <br>
+        <input type="text" name="cognomeContatto" [(ngModel)]="nuovoCliente.cognomeContatto"><br>
+    </div>
+    <div class="col-md-6">
+        <label>Telefono Contatto</label> <br>
+        <input type="number" name="telefono" [(ngModel)]="nuovoCliente.telefonoContatto"><br>
+        <label>Email Contatto</label> <br>
+        <input type="text" name="email" [(ngModel)]="nuovoCliente.emailContatto"><br>
+        <label>Via</label> <br>
+        <input type="text" name="via" [(ngModel)]="nuovoCliente.indirizzoSedeLegale.via"><br>
+        <label>Civico</label> <br>
+        <input type="text" name="civico" [(ngModel)]="nuovoCliente.indirizzoSedeLegale.civico"><br>
+        <label>Cap</label> <br>
+        <input type="number" name="cap" [(ngModel)]="nuovoCliente.indirizzoSedeLegale.cap"><br>
+        <label>Località</label> <br>
+        <input type="text" name="località" [(ngModel)]="nuovoCliente.indirizzoSedeLegale.localita"><br>
+        <label>Comune</label> <br>
+        <input type="text" name="comune" [(ngModel)]="nuovoCliente.indirizzoSedeLegale.comune.nome"><br>
+        <label>Provincia</label> <br>
+        <input type="text" name="via" [(ngModel)]="nuovoCliente.indirizzoSedeLegale.comune.provincia.nome"><br>
+    </div>
+
+
+    <div class="text-center mt-2">
+        <a class="btn btn-outline-success" (click)="postNuovoCliente(nuovoCliente)">Salva</a>
+    </div>
+</form>

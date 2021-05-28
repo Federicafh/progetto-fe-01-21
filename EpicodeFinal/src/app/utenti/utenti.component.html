@@ -1,0 +1,21 @@
+<ng-container class="text-center">
+    <h1>Utenti Loggati</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Ruolo</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="utentiService.utenti.content">
+            <tr *ngFor='let u of utentiService.utenti.content'>
+                <td>{{u.id}}</td>
+                <td>{{u.nome}}</td>
+                <td>{{u.cognome}}</td>
+                <td>{{u.roles.roleName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>

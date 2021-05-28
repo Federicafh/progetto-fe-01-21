@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary bg-gradient">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">{{title}}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#"  routerLink='' routerLinkActive='stileLinkAttivo'>Home</a>
+        <a class="nav-link"  routerLink='signup' routerLinkActive='stileLinkAttivo'>Signup</a>
+        <a class="nav-link"  routerLink='login' routerLinkActive='stileLinkAttivo'>Login</a>
+        <a class="nav-link"  routerLink='utenti' routerLinkActive='stileLinkAttivo'>Utenti</a>
+        <a class="nav-link"  routerLink='clienti' routerLinkActive='stileLinkAttivo'>Clienti</a>
+        <a class="nav-link"  routerLink='fatture' routerLinkActive='stileLinkAttivo'>Fatture</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container mt-5 shadow p-3 mb-5 bg-body rounded d-flex justify-content-center">
+  <router-outlet>
+    <!--posto in cui verrà inserito il componente cliccato-->
+  </router-outlet>
+</div>

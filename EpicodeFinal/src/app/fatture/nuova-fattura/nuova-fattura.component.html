@@ -1,0 +1,16 @@
+<h2>Aggiungi nuova Fattura</h2>
+<form>
+    <label>Data</label> <br>
+    <input type="date" name="id" [(ngModel)]="nuovaFattura.data"><br>
+    <label>Numero</label> <br> 
+    <input type="number" name="numero" [(ngModel)]="nuovaFattura.numero"><br>
+    <label>Anno</label> <br>
+    <input type="number" name="anno" [(ngModel)]="nuovaFattura.anno"><br>
+    <label>Importo</label> <br>
+    <input type="number" name="importo" [(ngModel)]="nuovaFattura.importo"><br>
+    <label>Stato</label> <br>
+    <input type="text" name="stato" [(ngModel)]="nuovaFattura.stato.nome"><br>
+    <div class="text-center mt-2"> <br>
+        <a class="btn btn-outline-success" (click)="salvaFattura(nuovaFattura)">Salva</a>
+    </div>
+</form>
